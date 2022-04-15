@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello {{username}}</h1> 
+    <h2>Dashboard</h2>
+    <a href="/">Log Out</a>
+  <br>
+  <br>
+    
+    <table border='1' style='border-collapse:collapse' id="tracker">
+        <tr>
+            <th width="115">Tracker</th>
+            <th >Last Tracked</th>
+            <th width="100">How I felt</th>
+            <th width="150">Description</th>
+            <th width="80">Add Log</th>
+            <th width="65"></th>
+            <th width="65"></th>
+        </tr>
+        {% for tracker in trackers %}
+        <tr>
+            <td><a href="/view/{{username}}/{{tracker.tracker_id}}">{{tracker.tracker_name}}</a></td>
+            <td>{{dictionary[tracker.tracker_id].datetime}}</td>
+            <td style="text-align:center">{{dictionary[tracker.tracker_id].text}}</td>
+            <td>{{dictionary[tracker.tracker_id].notes}}</td>
+            <td style="text-align:center;"><a href="/log/{{username}}/{{tracker.tracker_id}}/add">+</a></td>
+            <td><a href="/tracker/{{username}}/update/{{tracker.tracker_id}}">Update</a></td>
+            <td><a href="/tracker/{{username}}/delete/{{tracker.tracker_id}}">Delete</a></td>
+                <!-- <select id="select1" onchange="getValue(this.value)">
+                    <option value="$">"Edit"</option>
+                    <option value="Update>"><a href="/tracker/update/{{tracker.tracker_id}}">Update</a></option>
+                    <option value="Delete"><a href="/tracker/delete/{{tracker.tracker_id}}">Delete</a></option>
+                </select> -->
+        </tr>
+        {% endfor %}               
+                <!-- <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div> -->
+</div>
+    </table>
+  <br>
+
+    <a href="/tracker/{{username}}"> Add tracker </a>
+</body>
+</html>

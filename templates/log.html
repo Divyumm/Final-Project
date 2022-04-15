@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+</head>
+
+<body>
+    <h1>Hello {{username}}</h1> <a href="/">Log Out</a>
+    <h3>Log Form</h3>
+    <form action="/log/{{username}}/{{tracker_id}}/add" method="POST" id="create-student-form">
+        <!-- <div>
+            <label>When (Format YYYY-MM-DD hh:mm:ss)</label>
+            <input type="datetime" name="datetime" required />
+        </div> -->
+        <!-- <div>
+            <label>Value</label>
+            <input type="number" name="" required />
+        </div> -->
+        <div>
+            <label>Notes:</label>
+            <input type="text" name="notes" />
+        </div>
+        <div>
+            <label>How are you feeling on a scale from 1 to 10 ?</label>
+            <input type="number" name="scale" required>
+        </div>
+        <!-- <div>
+            <label>Has this behaviour pattern happened before </label>
+            <input type="radio" name="repitition" required/>
+        </div> -->
+        <div>
+            <input type="submit" name="logit"/>
+        </div> 
+    </form>
+
+    <a href="/view/{{username}}/{{tracker_id}}"> Go to View</a>
+</body>
+
+</html>

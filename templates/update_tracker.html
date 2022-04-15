@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+</head>
+
+<body>
+    <h1>Hello {{username}}</h1> <a href="/">Log Out</a>
+    <h3>Update Tracker</h3>
+    <form action="/tracker/{{username}}/update/{{tracker_id}}" method="POST" id="create-student-form">
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" value="{{l[0].tracker_name}}" required />
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" name="description" value="{{l[0].tracker_description}}" autocomplete="off" required />
+        </div>
+        <div>
+            <label>Has this behaviour pattern happened before ?</label>
+            <input type="checkbox" name="repeat" />
+        </div>
+        <div>
+            <input type="submit" name="submit"/>
+        </div>  
+        <!-- <div>
+            <label>Settings</label>
+            <input type="" name="Time" required />
+        </div> -->
+    </form>
+</body>
+
+</html>

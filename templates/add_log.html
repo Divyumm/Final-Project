@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <table id="tracker">
+        <tr>
+            <th>Tracker</th>
+            <th>Last Tracked</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {% i for i in %}
+        <tr>
+            <td><a href="">{{}}</a></td>
+            <td>{{}}</td>
+            <td><a href="">+</a></td>
+            <td>
+                <select id="select1" onchange="getValue(this.value)">
+                    <option value="$">--Please Select--</option>
+                    <option value="Edit"><a href=""></a></option>
+                    <option value="Delete"><a href=""></a></option>
+                </select>
+            </td>
+        </tr>
+                
+                <!-- <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div> -->
+</div>
+    </table>
+</body>
+</html>

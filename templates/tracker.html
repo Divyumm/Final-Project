@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+</head>
+
+<body>
+    <h1>Hello {{username}}</h1> <a href="/">Log Out</a>
+    <h3>Add Tracker</h3>
+    <form action="/tracker/{{username}}" method="POST" id="create_tracker">
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" required />
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" name="description" required />
+        </div>
+        <div>
+            <label>This behaviour pattern happened before.</label>
+            <input type="checkbox" name="repeat" />
+        </div>
+        <div>
+            <input type="submit" name="Add"/>
+        </div>
+        
+        
+        <!-- <div>
+            <label>Settings</label>
+            <input type="" name="Time" required />
+        </div> -->
+    </form>
+
+    <a href="/dashboard/{{username}}"> Go to Dashboard</a>
+</body>
+
+</html>

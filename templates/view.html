@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View</title>
+</head>
+	<h1>Hello {{username}} !</h1> <a href="/">Log Out</a>
+	<h2>Welcome to the log view pane.</h2>
+
+	<p>
+		<h3>Tracker for {{name_tracker.tracker_name}}. Here is the data trend chart !</h3>
+		<img src="/static/myplot.png"/>
+	</p>
+	<!-- style="text-align:center;" -->
+	<p>
+		<h2>Logs</h2>
+		<table border='1' style="border-collapse:collapse" id="logs">
+			<tr>
+				<th width="150" style="border: 1px solid black ;">On</th>
+				<th width="70" style="border: 1px solid black ;">Value</th>
+				<th width="200" style="border: 1px solid black ;">Notes</th>
+				<th width="65" style="border: 1px solid black ;"></th>
+				<th width="65" style="border: 1px solid black ;"></th>
+			</tr>
+			{% for i in logs %}
+			<tr style="border: 1px solid black;">
+				<td style="border: 1px solid black; ">{{i.datetime}}</td>
+				<td style="border: 1px solid black; text-align:center;">{{i.text}}</td>
+				<td style="border: 1px solid black;">{{i.notes}}</td>
+				<td style="border: 1px solid black;"><a href="/log/{{username}}/{{i.e_tracker_id}}/edit">Edit</a></td>	
+				<td><a href="/log/{{username}}/{{i.e_tracker_id}}/delete/{{i.datetime|string()}}">Delete</a></td>	
+					
+					<!-- <select id="Actions" onchange="getValue(this.value)">
+						<option value="$">--Please Select--</option>
+						<option value="Edit"><a href="/log/{{trackers.tracker_id}}/edit"></a></option>
+						<option value="Delete"><a href="/log/{{trackers.tracker_id}}/delete"></a></option>
+					</select> -->
+				<!-- </td> -->
+			</tr>
+			{% endfor %}
+		</table>	 
+			
+		</p>		
+		<a href="/log/{{username}}/{{tracker_id}}/add">Log another event</a>
+  <br>
+    <a href="/dashboard/{{username}}">Back to Dashboard</a>
+	
